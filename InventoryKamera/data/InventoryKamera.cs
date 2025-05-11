@@ -385,14 +385,18 @@ namespace InventoryKamera
 								Directory.CreateDirectory(artifactPath + "equipped");
 								imageCollection.Bitmaps[5].Save(artifactPath + "equipped/equipped.png");
 								Directory.CreateDirectory(artifactPath + "locked");
+				imageCollection.Bitmaps[5].Save(artifactPath + "equipped/equipped.png");
+								Directory.CreateDirectory(artifactPath + "locked");
 								imageCollection.Bitmaps[6].Save(artifactPath + "locked/locked.png");
+                                Directory.CreateDirectory(artifactPath + "sanctify");
+                                imageCollection.Bitmaps[7].Save(artifactPath + "sanctify/sanctify.png");
 
 								imageCollection.Bitmaps.Last().Save(artifactPath + "card.png");
 
+                                imageCollection.Bitmaps.Last().Save(artifactPath + "card.png");
+
 								Task.Run(()=>LogObject(artifact, artifactPath + "artifact.json"));
 							}
-
-							// Dispose of everything
 							imageCollection.Bitmaps.ForEach(b => b.Dispose());
 							break;
 
